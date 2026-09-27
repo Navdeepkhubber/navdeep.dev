@@ -1,4 +1,4 @@
-import { useContext, useId, type CSSProperties, type ReactNode } from 'react';
+import { useContext, type ReactNode } from 'react';
 import { ThemeContext } from './theme';
 
 type DiagramName = 'home' | 'about' | 'security' | 'engineering' | 'contact' | 'finance' | 'procurement' | 'resume' | 'conversation' | 'homeWork';
@@ -239,20 +239,11 @@ const suppliedSvg: Partial<Record<DiagramName, string>> = {
 };
 
 export function Diagram({ name }: { name: DiagramName }) {
-  const sketchId = `sketch-${useId().replace(/:/g, '')}`;
   const theme = useContext(ThemeContext);
   const svg = suppliedSvg[name];
   if (svg) return <img className="reference-art diagram" src={theme === 'dark' ? svg.replace('/diagrams/', '/diagrams/dark/') : svg} alt={`${name} flow diagram`} />;
   const [width, height] = sizes[name];
-  return <svg className="reference-art diagram" viewBox={`0 0 ${width} ${height}`} role="img" aria-label={`${name} flow diagram`} focusable="false" xmlns="http://www.w3.org/2000/svg" style={{ '--sketch-filter': `url(#${sketchId})` } as CSSProperties}>
-    <defs>
-      <filter id={sketchId} x="-30" y="-30" width="500" height="450" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
-        <feTurbulence type="fractalNoise" baseFrequency="0.055" numOctaves="2" seed="8" result="grain"/>
-        <feDisplacementMap in="SourceGraphic" in2="grain" scale="0.6" xChannelSelector="R" yChannelSelector="G" result="uneven"/>
-        <feColorMatrix in="grain" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  .35 .25 .15 0 .48" result="fading"/>
-        <feComposite in="uneven" in2="fading" operator="in"/>
-      </filter>
-    </defs>
+  return <svg className="reference-art diagram" viewBox={`0 0 ${width} ${height}`} role="img" aria-label={`${name} flow diagram`} focusable="false" xmlns="http://www.w3.org/2000/svg">
     {name === 'home' && <NetworkCube/>}
     {name === 'about' && <NetworkCube about/>}
     {name === 'security' && <SecurityArt/>}

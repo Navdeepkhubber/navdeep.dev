@@ -35,8 +35,6 @@ p{line-height:1.48}
 .action-outline{background:transparent;color:#0064d5}
 .action svg{flex:none}
 .reference-art{display:block;width:100%;height:auto;overflow:hidden}
-.diagram path,.diagram ellipse,.diagram rect,.diagram circle{filter:var(--sketch-filter)}
-.diagram .diagram-paper{filter:none}
 .hero-art{justify-self:end;align-self:start;min-width:0;width:100%}
 .hero-about{height:385px;padding-top:13px;grid-template-columns:54% 46%}
 .hero-about .eyebrow{margin-bottom:14px}
@@ -254,3 +252,27 @@ p{line-height:1.48}
 ::view-transition-old(hero-title),::view-transition-new(hero-title),
 ::view-transition-old(hero-lead),::view-transition-new(hero-lead){animation-duration:.22s;animation-timing-function:ease-in-out}
 @media(prefers-reduced-motion:reduce){@view-transition{navigation:none}}
+
+/* Place the mobile menu above the page content with an opaque panel. */
+@media(max-width:700px){
+  .site-header{position:relative;z-index:10}
+  .nav-links.is-open{box-shadow:0 18px 22px #071d4826}
+}
+
+/* Crossfade the page backdrop and interactive colours on theme changes. */
+body{position:relative;isolation:isolate}
+body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(circle at 52% 17%,#102137 0,#0b192b 48%,#081525 100%);opacity:0;transition:opacity .3s ease}
+#root{position:relative;z-index:1}
+:root[data-theme=dark] body{background:radial-gradient(circle at 52% 17%,#fff 0,#fbfbf9 48%,#f8f9f7 100%)}
+:root[data-theme=dark] body::before{opacity:1}
+#root :is(header,main,footer,section,article,nav,a,button,h1,h2,h3,p,span,div){transition:color .3s ease,background-color .3s ease,border-color .3s ease}
+#root .action{transition:filter .15s,transform .15s,color .3s ease,background-color .3s ease,border-color .3s ease}
+@media(prefers-reduced-motion:reduce){body::before,#root :is(header,main,footer,section,article,nav,a,button,h1,h2,h3,p,span,div){transition:none}}
+
+@media(max-width:700px){
+  .home-feature{height:auto;min-height:185px}
+  .home-feature .arrow-link{position:static;margin-top:10px}
+  .home-feature-icon,.home-project-grid article>svg{display:none}
+  .home-project-grid article{height:auto;min-height:170px}
+  .home-project-grid p{margin-bottom:14px}
+}
