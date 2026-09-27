@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 445 445" role="img" aria-labelledby="title desc">
+  <title id="title">Connected systems diagram</title>
+  <desc id="desc">An editable blue line diagram connecting complex systems, reliable outcomes, ideas into impact, and systems people trust.</desc>
+  <defs>
+    <style>
+      .primary{fill:none;stroke:#86beff;stroke-width:1.35;stroke-linecap:round;stroke-linejoin:round}
+      .fine{fill:none;stroke:#6199dc;stroke-width:.8;stroke-linecap:round;stroke-linejoin:round}
+      .dash{fill:none;stroke:#6199dc;stroke-width:1;stroke-linecap:round;stroke-dasharray:1 5}
+      .node{fill:#86beff}
+      .node-outline{fill:#102137;stroke:#86beff;stroke-width:1.1}
+      .label{fill:#86beff;font-family:Arial,Helvetica,sans-serif;font-size:9px;font-weight:500;letter-spacing:2.05px}
+    </style>
+  </defs>
+
+<!-- Editable connector network -->
+  <g id="connectors">
+    <path class="fine" d="M29 98v38c0 19 8 28 29 28h76c13 0 20 8 20 21v7c0 12 8 19 21 19h6"/>
+    <path class="fine" d="M88 122h36c28 0 49 17 63 46"/>
+    <path class="fine" d="M72 164h50c21 0 31 11 31 31v27c0 12 7 18 18 18h-9"/>
+    <path class="fine" d="M52 285v-25c0-13 7-20 20-20h89"/>
+    <path class="fine" d="M95 299h28c32 0 48-19 65-49"/>
+    <path class="fine" d="M367 108v45c0 19-9 29-29 29h-76"/>
+    <path class="fine" d="M298 91c-25 2-43 18-58 43l-15 31"/>
+    <path class="fine" d="M270 242h47c14 0 21 8 21 21v19"/>
+    <path class="fine" d="M235 249v35c0 20 11 31 32 31h8"/>
+    <path class="fine" d="M255 230v-80"/>
+    <path class="fine" d="M218 249v43c0 30-11 50-32 63"/>
+
+    <path class="dash" d="M103 94c23 0 37 19 37 45v54c0 26 11 41 33 47"/>
+    <path class="dash" d="M207 47c-20 7-31 21-31 42 0 31 20 51 51 51h90"/>
+    <path class="dash" d="M24 223c16-16 39-25 61-20 30 6 40 34 43 65 4 43 23 80 60 100 24 13 53 15 78 5"/>
+    <path class="dash" d="M276 220c15-10 34-16 55-16 44 0 76 31 76 73 0 11-2 20-7 29"/>
+    <path class="dash" d="M220 272c22 0 41-14 49-35"/>
+  </g>
+
+  <!-- Center cube -->
+  <g id="central-cube">
+    <path class="primary" d="M181 188l36-24 37 23-36 25z"/>
+    <path class="primary" d="M181 188v37l37 24v-37z"/>
+    <path class="primary" d="M254 187v38l-36 24v-37z"/>
+    <path class="fine" d="M181 205l37 24 36-24"/>
+    <circle class="node-outline" cx="201.5" cy="220" r="2.1"/>
+  </g>
+
+  <!-- Data / complex systems -->
+  <g id="complex-systems">
+    <text class="label" x="18" y="68"><tspan x="18">COMPLEX</tspan><tspan x="18" dy="14">SYSTEMS</tspan></text>
+    <ellipse class="primary" cx="61.5" cy="106" rx="15.5" ry="6"/>
+    <path class="primary" d="M46 106v28c0 4 7 7 15.5 7S77 138 77 134v-28M46 116c0 4 7 7 15.5 7S77 120 77 116M46 126c0 4 7 7 15.5 7S77 130 77 126"/>
+    <path class="fine" d="M52 113h.1M52 123h.1M52 133h.1"/>
+  </g>
+
+  <!-- Shield / reliable outcomes -->
+  <g id="reliable-outcomes">
+    <text class="label" x="353" y="67"><tspan x="353">MORE</tspan><tspan x="353" dy="14">RELIABLE</tspan><tspan x="353" dy="14">OUTCOMES</tspan></text>
+    <path class="primary" d="M318 57c-6 5-12 7-20 9v20c0 11 6 19 20 25 14-7 20-15 20-25V66c-8-2-14-4-20-9z"/>
+    <rect class="primary" x="311" y="78" width="14" height="14" rx="1"/>
+    <path class="primary" d="M314 78v-4a4 4 0 018 0v4M318 83v5"/>
+  </g>
+
+  <!-- Code document / ideas -->
+  <g id="ideas-impact">
+    <text class="label" x="18" y="358"><tspan x="18">IDEAS</tspan><tspan x="18" dy="14">INTO IMPACT</tspan></text>
+    <path class="primary" d="M33 300h25l8 8v31H33zM58 300v8h8"/>
+    <path class="primary" d="M47 315l-5 5 5 5M53 315l5 5-5 5M51 313l-3 15"/>
+  </g>
+
+  <!-- Globe / trusted systems -->
+  <g id="trusted-systems">
+    <text class="label" x="366" y="333"><tspan x="366">PEOPLE</tspan><tspan x="366" dy="14">SYSTEMS</tspan><tspan x="366" dy="14">TRUST</tspan></text>
+    <circle class="primary" cx="334" cy="332" r="23"/>
+    <ellipse class="primary" cx="334" cy="332" rx="10" ry="23"/>
+    <path class="primary" d="M311 332h46M315 320c11 5 27 5 38 0M315 344c11-5 27-5 38 0M334 309v46"/>
+  </g>
+
+  <!-- Network nodes, separated for easy repositioning -->
+  <g id="nodes">
+    <circle class="node" cx="103" cy="94" r="3"/>
+    <circle class="node" cx="72" cy="164" r="4"/>
+    <circle class="node" cx="161" cy="240" r="3.5"/>
+    <circle class="node" cx="95" cy="299" r="4"/>
+    <circle class="node" cx="24" cy="223" r="2.25"/>
+    <circle class="node" cx="267" cy="104" r="4.5"/>
+    <circle class="node" cx="317" cy="140" r="4"/>
+    <circle class="node" cx="270" cy="242" r="4"/>
+    <circle class="node" cx="338" cy="282" r="3.5"/>
+    <circle class="node" cx="225" cy="167" r="3"/>
+    <rect class="node" x="325" y="179" width="6" height="6" rx=".5"/>
+    <rect class="node" x="272" y="312" width="6" height="6" rx=".5"/>
+    <rect class="node-outline" x="112" y="348" width="4" height="4" rx=".35"/>
+  </g>
+</svg>
